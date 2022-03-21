@@ -67,6 +67,11 @@ hr{
     font-size: 2rem;
     border: 2px solid gray;
     font-weight: bold;
+    color: white;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Keybord Box */

@@ -12,3 +12,14 @@ let createBlock = function(){
 }
 
 createBlock()
+
+let aBox = document.getElementById('8');
+let bBox = document.getElementById('14');
+let cBox = document.getElementById('17');
+aBox.innerHTML = 'A';
+bBox.innerHTML = 'G';
+cBox.innerHTML = 'I';
+
+aBox.classList.add('bg-green');
+bBox.classList.add('bg-dark');
+cBox.classList.add('bg-light-brown');
