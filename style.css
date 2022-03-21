@@ -62,8 +62,8 @@ hr{
 
 
 .block{
-    min-width: 80px;
-    min-height: 80px;
+    width: 80px;
+    height: 80px;
     font-size: 2rem;
     border: 2px solid gray;
     font-weight: bold;
@@ -90,6 +90,7 @@ hr{
     font-weight: bold;
     background-color: gray;
     touch-action: manipulation;
+    cursor: pointer;
 }
 
 .space-wide{
@@ -104,6 +105,8 @@ hr{
     width: 30px;
     height: 100%;
 }
+
+/* Color */
 
 .bg-light-brown{
     background-color: #c9b458;
@@ -123,4 +126,26 @@ hr{
 .bg-dark{
     background-color: #3e4142;
     border: none;
+}
+
+@media screen and (max-width: 475px) {
+    .block{
+        width: 50px;
+        height: 50px;
+    }
+
+    .margin-right{
+        margin-right: .5rem;
+    }
+
+    .btn , .space-wide{
+        width: 30px;
+        height: 58px;
+        padding: 0;
+        font-size:0.8rem;
+    }
+
+    .space-wide{
+        width: 50px;
+    }
 }
