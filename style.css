@@ -84,13 +84,11 @@ hr{
 }
 
 .btn , .space-wide{
-    width: 50px;
     height: 70px;
     padding: 10px;
     margin-right: 6px;
     border-radius: 4px;
     text-transform: uppercase;
-    font-size: 1rem;
     color: white;
     font-weight: bold;
     background-color: gray;
@@ -98,8 +96,14 @@ hr{
     cursor: pointer;
 }
 
+.btn{
+    width: 50px;
+    font-size: 1rem;
+}
+
 .space-wide{
     width: 80px;
+    font-size: 0.9rem;
 }
 
 .space-wide img{

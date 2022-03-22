@@ -1,5 +1,3 @@
-
-
 let createBlock = function(){
     let gameblock = document.getElementById('gameblock');
     
@@ -23,3 +21,19 @@ cBox.innerHTML = 'I';
 aBox.classList.add('bg-green');
 bBox.classList.add('bg-dark');
 cBox.classList.add('bg-light-brown');
+
+
+let pressKey = function(){
+    let button = document.querySelectorAll('.btn');
+    for(let i = 0 ; i < button.length ; i++){
+        button[i].addEventListener('click' , function(){
+            console.log(`${button[i].innerText} is pressed`);
+        })
+    }
+}
+
+
+
+window.wordle = {
+    onkeypress : pressKey(),
+};
