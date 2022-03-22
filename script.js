@@ -31,33 +31,42 @@ window.wordle = {
 };
 
 
-let hookEvents = function () {
-    let buttons = document.querySelectorAll('.btn');
-    for (let i = 0; i < buttons.length; i++) {
+let keyboardWrapper = document.querySelector('.keybordBoxs');
 
-        // we don't want to hard code the event handler here.
-        // we'll let the wordle object handle it.
-        // button[i].addEventListener('click' , function(){
-        //     console.log(`${button[i].innerText} is pressed`);
-        // })
-
-        // let key = buttons[i].innerText;
-        let key = buttons[i].dataset.key;
-
-        buttons[i].addEventListener('click', function () {
-            window.wordle.onKeyPressed(key);
-        })
-
-        // note: this is not the same as this:
-        /*
-        buttons[i].addEventListener('click', 
-            window.wordle.onKeyPressed(key)
-        )
-        */
+keyboardWrapper.addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn')) {
+        let key = e.target.dataset.key;
+        window.wordle.onKeyPressed(key);
     }
-}
+})
 
-hookEvents();
+// let hookEvents = function () {
+//     let buttons = document.querySelectorAll('.btn');
+//     for (let i = 0; i < buttons.length; i++) {
+
+//         // we don't want to hard code the event handler here.
+//         // we'll let the wordle object handle it.
+//         // button[i].addEventListener('click' , function(){
+//         //     console.log(`${button[i].innerText} is pressed`);
+//         // })
+
+//         // let key = buttons[i].innerText;
+//         let key = buttons[i].dataset.key;
+
+//         buttons[i].addEventListener('click', function () {
+//             window.wordle.onKeyPressed(key);
+//         })
+
+//         // note: this is not the same as this:
+//         /*
+//         buttons[i].addEventListener('click', 
+//             window.wordle.onKeyPressed(key)
+//         )
+//         */
+//     }
+// }
+
+// hookEvents();
 
 // window.wordle = {
 //     onkeypress : pressKey(),
