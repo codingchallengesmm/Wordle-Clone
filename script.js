@@ -23,17 +23,42 @@ bBox.classList.add('bg-dark');
 cBox.classList.add('bg-light-brown');
 
 
-let pressKey = function(){
-    let button = document.querySelectorAll('.btn');
-    for(let i = 0 ; i < button.length ; i++){
-        button[i].addEventListener('click' , function(){
-            console.log(`${button[i].innerText} is pressed`);
+// create the global game object
+window.wordle = {
+    onKeyPressed: function (key) {
+        console.log(key + " is pressed");
+    }
+};
+
+
+let hookEvents = function () {
+    let buttons = document.querySelectorAll('.btn');
+    for (let i = 0; i < buttons.length; i++) {
+
+        // we don't want to hard code the event handler here.
+        // we'll let the wordle object handle it.
+        // button[i].addEventListener('click' , function(){
+        //     console.log(`${button[i].innerText} is pressed`);
+        // })
+
+        // let key = buttons[i].innerText;
+        let key = buttons[i].dataset.key;
+
+        buttons[i].addEventListener('click', function () {
+            window.wordle.onKeyPressed(key);
         })
+
+        // note: this is not the same as this:
+        /*
+        buttons[i].addEventListener('click', 
+            window.wordle.onKeyPressed(key)
+        )
+        */
     }
 }
 
+hookEvents();
 
-
-window.wordle = {
-    onkeypress : pressKey(),
-};
+// window.wordle = {
+//     onkeypress : pressKey(),
+// };
